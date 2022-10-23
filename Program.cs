@@ -3,8 +3,11 @@
 using Newtonsoft.Json;
 using SchemaApp;
 
-var data = SchemaGenerator.Generate<Person>("New Contract");
-Console.WriteLine(data);
+var data1 = SchemaGenerator.Generate<Person>("New Contract");
+var data2 = SchemaGenerator.Generate<Address>("Address Contract");
+Console.WriteLine(data1);
+Console.WriteLine("\n");
+Console.WriteLine(data2);
 
 public class Person
 {
@@ -14,4 +17,14 @@ public class Person
 
     public DateTime Created { get; set; }
 
+}
+
+public class Address
+{
+    public string City { get; set; }
+    public string Region { get; set; }
+
+    public string PostalCode { get; set; }
+
+    public string Country { get; set; }
 }
